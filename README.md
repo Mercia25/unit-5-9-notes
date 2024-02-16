@@ -27,7 +27,66 @@ In the next section, using platforms like YouTube or Vimeo will be discussed, wh
 
 
 
-7. HTML Content Identification 
+7. HTML Content Identification
+
+Here is a good example. There is a simple article wrapped in an article element. It has a headline and four paragraphs. When working on the CSS layout, you are required to group these paragraphs together. The goal is to add a background color only to the paragraphs, excluding everything else. To achieve this, introduce a div with a class called "boxes". By targeting this box class with CSS, the changes taking effect can be seen.
+
+Now, imagine there is a particular phrase in the middle of the text that needs to be specifically targeted for some reason e.g. it is written in Spanish, and we want to change its language attribute to reflect that. To accomplish this, use the inline element span to mark the desired phrase. Both div and span can make use of various global attributes like class, id, lang, and aria roles.
+
+Div and span come in handy when there is not another suitable element to use, acting as a last resort option. Remember, use them wisely.
+
+Before 2010, when HTML5 came along with its helpful semantic elements, we relied heavily on divs for all sorts of purposes. Divs were used to create sections, sidebars, and everything in between. People still tend to use divs and spans excessively in HTML, without much else. This course aims to emphasize the value of semantic HTML.
+
+Technically you can get away with using divs and spans for everything. Some developers even put their titles in divs and make spans pretend to be buttons. The HTML will not give an error, and the browser will still try its best to do its job and parse the page. But to be honest, it is not good practice. It adversely affects many users. We strongly urge you to avoid using divs and spans for every little thing. Opt for the appropriate HTML element that serves the purpose. 
+
+Now, with that being said, there are times when a generic element is needed. Div is a block-level element, while span is an inline element. They essentially do nothing until CSS or Javascript is applied to them.
+
+
+
+
+ 8. HTML Integration
+
+ 9. Let's start putting the pieces together. This will give you a sense of how we are going to assemble web pages out of hundreds of nested elements, each conveying meaning and each playing off of the other, adding up to the whole. 
+
+When you are unsure what the best way to mark up a page is, travel around the web, find similar sites, and use developer tools to see how others have decided to use HTML elements in their content. The exact way to combine these HTML elements differs with every webpage created. It is hard to be sure it is done correctly because the right way to do it always depends on what the content is, and what the page is for. 
+
+In fact, usually, there are several good ways to do it, and none of them are necessarily right or better. There is a bit of an art to structuring HTML. There is a lot of creative freedom here. We are, after all, trying to represent human communication in code, and while code may want to be correct and perfect, human connection is not always.
+
+Inside the head of a webpage, you put important information that the browser needs to know about the website. Remember the section on specifying the character set? Well, that is where it comes in. 
+
+The character set is not something you want your users to see, it is intended for the browser. To convey this, use the meta element. Ensure that meta elements are only placed inside the head as they provide metadata about the page. For example, to define the character set, use the character set attribute and set it to UTF-8. Before delving into other things that can be conveyed through meta tags, let's start with something that is required on every webpage: the title element. Just to clarify, this title element is not something that appears as visible content.
+
+
+
+
+
+9. HTML Working with Forms and Interactive Elements
+    
+
+Form fields have been an essential part of the web for a long time. They are used for various tasks like logging into websites, making purchases, conducting searches, and adding content. 
+
+It is important to use semantic form elements in HTML instead of divs and spans because it allows us to leverage the built-in power of the browser. This way, we avoid wasting time and effort trying to recreate functionalities that already exist in the browser. Moreover, by using HTML form elements, we ensure that forms will be compatible with all devices and input/output hardware, even those we may not be familiar with. 
+
+To start off, create a simple form to sign up for an email newsletter. We need two fields for this: 
+
+The person's name. 
+Their email address.
+
+To create a form, we start with the form element, which informs the browser about the presence of a form using opening and closing tags. In the newsletter signup form, there will be two fields: name and email. These field names can be turned into labels using the label element. 
+
+Use the input element to provide places for users to input their name and email. Unlike other elements, the input element does not have a closing tag due to its older structure. It acts as a marker for the browser to bring in functionality and place it there. This is where the form's magic happens. 
+
+Now, a button is needed for users to submit the form. Use the button element for this. The text on the button can be customized to whatever is required. Although the form looks good visually, it currently lacks functionality. To make it work, we need to connect it to a backend. We can add an action and method attribute to make a demo work, although using the "get" method is not secure and is not recommended for real websites.
+
+Once set up, land on the response page, but the data that was entered does not appear. This is because the input fields need a "name" attribute to report the data. Add "name=name" to the first input element and "name=email" to the second. The name attribute can be customized as desired. After making these changes, the form works successfully, but only if you interact with it using a screen and a mouse. 
+
+To make it accessible to everyone, we need to address the issue of the label and input elements not being connected. There are two options to achieve this. 
+
+Add a "for" attribute to the label that matches the "id" attribute of the input. 
+Wrap the input with the label. 
+Both methods work, and it is a matter of choosing the desired markup structure. You can test the connection by clicking on the label and ensuring that the focus jumps to the corresponding input. This is crucial for accessibility, as many people rely on this connection. Clicking on the label is a quick way to verify its functionality. 
+
+These are the basics of building an HTML form. Next, we will explore how to utilize additional browser features to enhance the user experience.
 
 
 
